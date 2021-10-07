@@ -11,23 +11,39 @@ li {
 body {
   letter-spacing: 0.5px;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+body.active {
+  overflow: hidden;
 }
 
 .container {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .header {
+  position: absolute;
+  width: 100%;
+  background-color: #202020;
+  z-index: 100;
+}
+.header .header_wr {
   display: flex;
   padding: 0.5em;
+  align-items: center;
 }
-.header .logo {
+.header .header_wr .logo {
   width: 60px;
   height: 60px;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #25161167;
 }
-.header .logo img {
+.header .header_wr .logo img {
   width: 100%;
   height: 100%;
 }
@@ -48,4 +64,153 @@ body {
 }
 .nav_wr .nav_item {
   padding: 0 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+.nav_wr .nav_item:hover {
+  border-bottom: 1px solid white;
+}
+
+.main {
+  background-image: url("alin-andersen-f0SgAs27BYI-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 76px;
+  min-height: 100vh;
+}
+.main .main_caption {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.cards_wr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards_wr .card {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  max-width: 320px;
+  background-color: #3f3f3f;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+}
+.cards_wr .card__caption {
+  margin: 10px 5px;
+  font-size: 24px;
+}
+.cards_wr .card__info {
+  line-height: 22px;
+}
+.cards_wr .card__btn {
+  cursor: pointer;
+  margin-top: auto;
+  align-self: flex-end;
+  background-color: #202020;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+.cards_wr .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
+}
+.cards_wr .card__img_wr {
+  max-height: 200px;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.cards_wr .card__img_wr img {
+  width: 100%;
+  height: 100%;
+}
+
+.navigation_adapt {
+  position: absolute;
+  transform: translateY(-969px);
+  top: 76px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.712);
+  transition: 0.5s;
+}
+.navigation_adapt .nav_item_a {
+  margin: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: 0.5s;
+}
+.navigation_adapt .nav_item_a:hover {
+  border-bottom: 1px solid white;
+}
+.navigation_adapt.active {
+  transform: translateY(0px);
+}
+
+.menu_btn {
+  width: 30px;
+  height: 20px;
+  display: none;
+  cursor: pointer;
+  position: relative;
+}
+.menu_btn .menu_line {
+  width: 30px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  top: 10px;
+  transition: 0.3s;
+}
+.menu_btn .menu_line::before, .menu_btn .menu_line::after {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  transition: 0.5s;
+}
+.menu_btn .menu_line::before {
+  top: -10px;
+}
+.menu_btn .menu_line::after {
+  bottom: -10px;
+}
+
+.menu_btn.active .menu_line {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.menu_btn.active .menu_line::before {
+  transform: translate(0, 10px) rotate(45deg);
+}
+
+.menu_btn.active .menu_line::after {
+  transform: translate(0, -10px) rotate(135deg);
+}
+
+@media (max-width: 685px) {
+  .navigation {
+    display: none;
+  }
+
+  .header_wr {
+    justify-content: space-between;
+  }
+
+  .menu_btn {
+    display: block;
+  }
 }/*# sourceMappingURL=main.css.map */
