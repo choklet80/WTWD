@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(VeOtaP.jpg);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 500px;
+  justify-content: space-between;
+  padding: 100px;
+  margin-top: 50px;
+}
+
+.mars, .earth {
+  width: 200px;
+  height: 200px;
+}
+
+.mars {
+  -webkit-animation: rotate 80s linear infinite;
+          animation: rotate 80s linear infinite;
+}
+
+.earth {
+  -webkit-animation: rotate 18s linear infinite;
+          animation: rotate 18s linear infinite;
+}
+
+.sputnik {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 80px;
+  width: 80px;
+  offset-path: path("M14 18.5C315.5 21.5 351 52 360 101C369 150 301.5 301.5 386 327.5C470.5 353.5 576 390.5 651 340C726 289.5 758 224 753.5 162.5C749 101 721.5 34 674 18.5C626.5 3.00002 550 -7.99998 501 10.5C452 29 394 61 377 130C360 199 365 304.5 305 327.5C245 350.5 142.5 410 73.5 375C4.50002 340 -4.99998 200.5 4.50002 130C12.1 73.6 14 32.1667 14 18.5Z");
+  -webkit-animation: move 5s linear infinite;
+          animation: move 5s linear infinite;
+  offset-rotate: auto 90deg;
+}
+
+@-webkit-keyframes move {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes move {
+  100% {
+    offset-distance: 100%;
+  }
+}
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */
